@@ -89,7 +89,7 @@ abstract class AuthTypeButton extends StatelessWidget {
     properties
         .add(ObjectFlagProperty<ValueChanged<bool>?>.has('onHover', onHover));
     properties.add(ObjectFlagProperty<ValueChanged<bool>?>.has(
-        'onFocusChange', onFocusChange));
+        'onFocusChange', onFocusChange,),);
     properties.add(DiagnosticsProperty<FocusNode?>('focusNode', focusNode));
     properties.add(DiagnosticsProperty<bool?>('autofocus', autofocus));
     properties.add(DiagnosticsProperty<AuthButtonStyle>('style', style));

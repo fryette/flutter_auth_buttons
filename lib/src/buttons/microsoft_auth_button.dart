@@ -70,7 +70,7 @@ class MicrosoftAuthButton extends AuthButton {
   }
 
   @override
-  Color? resolveBackgroundColor(Set<MaterialState> states) {
+  Color? resolveBackgroundColor(Set<WidgetState> states) {
     return resolvedBackgroundColor(
       color: const ButtonColor(
         Colors.white,
@@ -84,7 +84,7 @@ class MicrosoftAuthButton extends AuthButton {
   }
 
   @override
-  Color? resolveForegroundColor(Set<MaterialState> states) {
+  Color? resolveForegroundColor(Set<WidgetState> states) {
     return resolvedForegroundColor(
       foregroundColor: const ForegroundColor(
         Colors.black,
@@ -98,8 +98,8 @@ class MicrosoftAuthButton extends AuthButton {
   }
 
   @override
-  BorderSide? resolveSide(Set<MaterialState> states) {
-    if (!states.contains(MaterialState.disabled)) {
+  BorderSide? resolveSide(Set<WidgetState> states) {
+    if (!states.contains(WidgetState.disabled)) {
       if (style.buttonType != AuthButtonType.secondary) {
         return const BorderSide(
           color: Color(0xff8c8c8c),

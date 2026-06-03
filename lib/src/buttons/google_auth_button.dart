@@ -67,7 +67,7 @@ class GoogleAuthButton extends AuthButton {
   }
 
   @override
-  Color? resolveBackgroundColor(Set<MaterialState> states) {
+  Color? resolveBackgroundColor(Set<WidgetState> states) {
     return resolvedBackgroundColor(
       color: const ButtonColor(
         Colors.white,
@@ -81,7 +81,7 @@ class GoogleAuthButton extends AuthButton {
   }
 
   @override
-  Color? resolveForegroundColor(Set<MaterialState> states) {
+  Color? resolveForegroundColor(Set<WidgetState> states) {
     return resolvedForegroundColor(
       foregroundColor: const ForegroundColor(
         Colors.black,

@@ -56,17 +56,17 @@ class AuthButtonStyle with Diagnosticable {
   /// {@endtemplate}
   final Color? buttonColor;
 
-  MaterialStateProperty<Color?>? getBackgroundColor(BuildContext context) {
-    return MaterialStateProperty.resolveWith(
-      (Set<MaterialState> states) =>
+  WidgetStateProperty<Color?>? getBackgroundColor(BuildContext context) {
+    return WidgetStateProperty.resolveWith(
+      (Set<WidgetState> states) =>
           buttonColor ??
           _getMaterialStyle(context)?.backgroundColor?.resolve(states),
     );
   }
 
-  MaterialStateProperty<Color?>? getForegroundColor(BuildContext context) {
-    return MaterialStateProperty.resolveWith(
-      (Set<MaterialState> states) =>
+  WidgetStateProperty<Color?>? getForegroundColor(BuildContext context) {
+    return WidgetStateProperty.resolveWith(
+      (Set<WidgetState> states) =>
           textStyle?.color ??
           _getMaterialStyle(context)?.foregroundColor?.resolve(states),
     );
@@ -82,9 +82,9 @@ class AuthButtonStyle with Diagnosticable {
   /// {@endtemplate}
   final Color? splashColor;
 
-  MaterialStateProperty<Color?>? getOverlayColor(BuildContext context) {
-    return MaterialStateProperty.resolveWith(
-      (Set<MaterialState> states) =>
+  WidgetStateProperty<Color?>? getOverlayColor(BuildContext context) {
+    return WidgetStateProperty.resolveWith(
+      (Set<WidgetState> states) =>
           splashColor ??
           _getMaterialStyle(context)?.overlayColor?.resolve(states),
     );
@@ -101,9 +101,9 @@ class AuthButtonStyle with Diagnosticable {
   /// {@endtemplate}
   final double? elevation;
 
-  MaterialStateProperty<double?>? getElevation(BuildContext context) {
-    return MaterialStateProperty.resolveWith(
-      (Set<MaterialState> states) =>
+  WidgetStateProperty<double?>? getElevation(BuildContext context) {
+    return WidgetStateProperty.resolveWith(
+      (Set<WidgetState> states) =>
           elevation ?? _getMaterialStyle(context)?.elevation?.resolve(states),
     );
   }
@@ -117,9 +117,9 @@ class AuthButtonStyle with Diagnosticable {
   /// {@endtemplate}
   final double? borderRadius;
 
-  MaterialStateProperty<OutlinedBorder?>? getShape(BuildContext context) {
-    return MaterialStateProperty.resolveWith(
-      (Set<MaterialState> states) =>
+  WidgetStateProperty<OutlinedBorder?>? getShape(BuildContext context) {
+    return WidgetStateProperty.resolveWith(
+      (Set<WidgetState> states) =>
           _outlinedBorder() ??
           _getMaterialStyle(context)?.shape?.resolve(states),
     );
@@ -157,9 +157,9 @@ class AuthButtonStyle with Diagnosticable {
   /// {@endtemplate}
   final EdgeInsets? padding;
 
-  MaterialStateProperty<EdgeInsetsGeometry?>? getPadding(BuildContext context) {
-    return MaterialStateProperty.resolveWith(
-      (Set<MaterialState> states) =>
+  WidgetStateProperty<EdgeInsetsGeometry?>? getPadding(BuildContext context) {
+    return WidgetStateProperty.resolveWith(
+      (Set<WidgetState> states) =>
           padding ?? _getMaterialStyle(context)?.padding?.resolve(states),
     );
   }
@@ -186,9 +186,9 @@ class AuthButtonStyle with Diagnosticable {
   /// {@endtemplate}
   final TextStyle? textStyle;
 
-  MaterialStateProperty<TextStyle?>? getTextStyle(BuildContext context) {
-    return MaterialStateProperty.resolveWith(
-      (Set<MaterialState> states) =>
+  WidgetStateProperty<TextStyle?>? getTextStyle(BuildContext context) {
+    return WidgetStateProperty.resolveWith(
+      (Set<WidgetState> states) =>
           textStyle ?? _getMaterialStyle(context)?.textStyle?.resolve(states),
     );
   }
@@ -225,9 +225,9 @@ class AuthButtonStyle with Diagnosticable {
   /// {@endtemplate}
   final double? borderWidth;
 
-  MaterialStateProperty<BorderSide?>? getSide(BuildContext context) {
-    return MaterialStateProperty.resolveWith(
-      (Set<MaterialState> states) =>
+  WidgetStateProperty<BorderSide?>? getSide(BuildContext context) {
+    return WidgetStateProperty.resolveWith(
+      (Set<WidgetState> states) =>
           _borderSide() ?? _getMaterialStyle(context)?.side?.resolve(states),
     );
   }
@@ -273,9 +273,9 @@ class AuthButtonStyle with Diagnosticable {
   /// {@endtemplate}
   final double? height;
 
-  MaterialStateProperty<Size?>? getMinimumSize(BuildContext context) {
-    return MaterialStateProperty.resolveWith(
-      (Set<MaterialState> states) =>
+  WidgetStateProperty<Size?>? getMinimumSize(BuildContext context) {
+    return WidgetStateProperty.resolveWith(
+      (Set<WidgetState> states) =>
           _minimumSize() ??
           _getMaterialStyle(context)?.minimumSize?.resolve(states),
     );
@@ -351,9 +351,9 @@ class AuthButtonStyle with Diagnosticable {
   /// {@endtemplate}
   final Color? shadowColor;
 
-  MaterialStateProperty<Color?>? getShadowColor(BuildContext context) {
-    return MaterialStateProperty.resolveWith(
-      (Set<MaterialState> states) =>
+  WidgetStateProperty<Color?>? getShadowColor(BuildContext context) {
+    return WidgetStateProperty.resolveWith(
+      (Set<WidgetState> states) =>
           shadowColor ??
           _getMaterialStyle(context)?.shadowColor?.resolve(states),
     );
@@ -597,63 +597,63 @@ class AuthButtonStyle with Diagnosticable {
     // @formatter:off
     super.debugFillProperties(properties);
     properties.add(DiagnosticsProperty<Color?>('buttonColor', buttonColor,
-        defaultValue: null));
+        defaultValue: null,),);
     properties.add(DiagnosticsProperty<Color?>('splashColor', splashColor,
-        defaultValue: null));
+        defaultValue: null,),);
     properties.add(DiagnosticsProperty<double?>('elevation', elevation,
-        defaultValue: null));
+        defaultValue: null,),);
     properties.add(DiagnosticsProperty<double?>('borderRadius', borderRadius,
-        defaultValue: null));
+        defaultValue: null,),);
     properties.add(DiagnosticsProperty<EdgeInsets?>('padding', padding,
-        defaultValue: null));
+        defaultValue: null,),);
     properties.add(
-        DiagnosticsProperty<EdgeInsets?>('margin', margin, defaultValue: null));
+        DiagnosticsProperty<EdgeInsets?>('margin', margin, defaultValue: null,),);
     properties.add(DiagnosticsProperty<TextStyle?>('textStyle', textStyle,
-        defaultValue: null));
+        defaultValue: null,),);
     properties.add(DiagnosticsProperty<Color?>('borderColor', borderColor,
-        defaultValue: null));
+        defaultValue: null,),);
     properties.add(DiagnosticsProperty<double?>('borderWidth', borderWidth,
-        defaultValue: null));
+        defaultValue: null,),);
     properties.add(DiagnosticsProperty<AuthButtonType?>(
         'buttonType', buttonType,
-        defaultValue: null));
+        defaultValue: null,),);
     properties
         .add(DiagnosticsProperty<double?>('width', width, defaultValue: null));
     properties.add(
-        DiagnosticsProperty<double?>('height', height, defaultValue: null));
+        DiagnosticsProperty<double?>('height', height, defaultValue: null,),);
     properties.add(
-        DiagnosticsProperty<double?>('iconSize', iconSize, defaultValue: 30.0));
+        DiagnosticsProperty<double?>('iconSize', iconSize, defaultValue: 30.0,),);
     properties.add(DiagnosticsProperty<double?>('separator', separator,
-        defaultValue: null));
+        defaultValue: null,),);
     properties.add(DiagnosticsProperty<Color?>('iconBackground', iconBackground,
-        defaultValue: null));
+        defaultValue: null,),);
     properties.add(DiagnosticsProperty<AuthIconType?>('iconType', iconType,
-        defaultValue: null));
+        defaultValue: null,),);
     properties.add(DiagnosticsProperty<Color?>('shadowColor', shadowColor,
-        defaultValue: null));
+        defaultValue: null,),);
     properties.add(DiagnosticsProperty<Color?>(
         'progressIndicatorColor', progressIndicatorColor,
-        defaultValue: null));
+        defaultValue: null,),);
     properties.add(DiagnosticsProperty<Color?>(
         'progressIndicatorValueColor', progressIndicatorValueColor,
-        defaultValue: null));
+        defaultValue: null,),);
     properties.add(DiagnosticsProperty<double?>(
         'progressIndicatorStrokeWidth', progressIndicatorStrokeWidth,
-        defaultValue: null));
+        defaultValue: null,),);
     properties.add(DiagnosticsProperty<double?>(
         'progressIndicatorValue', progressIndicatorValue,
-        defaultValue: null));
+        defaultValue: null,),);
     properties.add(DiagnosticsProperty<Color?>('iconColor', iconColor,
-        defaultValue: null));
+        defaultValue: null,),);
     properties.add(DiagnosticsProperty<AuthIndicatorType>(
         'progressIndicatorType', progressIndicatorType,
-        defaultValue: null));
+        defaultValue: null,),);
     properties.add(DiagnosticsProperty<VisualDensity?>(
         'visualDensity', visualDensity,
-        defaultValue: null));
+        defaultValue: null,),);
     properties.add(DiagnosticsProperty<MaterialTapTargetSize?>(
         'tapTargetSize', tapTargetSize,
-        defaultValue: null));
+        defaultValue: null,),);
     // @formatter:on
   }
 }

@@ -18,7 +18,7 @@ AuthIcon resolvedIconUrl({
   required bool isDark,
   required bool enabled,
 }) {
-  final Set<MaterialState> states = <MaterialState>{MaterialState.selected};
+  final Set<WidgetState> states = <WidgetState>{WidgetState.selected};
   final Color? buttonColor = materialStyle?.backgroundColor?.resolve(states);
   bool buttonIsColored = false;
 

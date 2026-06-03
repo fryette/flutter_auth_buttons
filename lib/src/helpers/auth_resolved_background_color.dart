@@ -4,7 +4,7 @@
 
 import 'package:auth_buttons/src/utils/auth_colors.dart';
 import 'package:auth_buttons/src/utils/auth_type.dart';
-import 'package:flutter/material.dart' show Color, MaterialState, immutable;
+import 'package:flutter/material.dart' show Color, WidgetState, immutable;
 
 @immutable
 class ButtonColor {
@@ -21,12 +21,12 @@ class ButtonColor {
 
 Color resolvedBackgroundColor({
   required ButtonColor color,
-  required Set<MaterialState> states,
+  required Set<WidgetState> states,
   required bool isDark,
   required AuthButtonType? buttonType,
   required AuthIconType? iconType,
 }) {
-  if (!states.contains(MaterialState.disabled)) {
+  if (!states.contains(WidgetState.disabled)) {
     if (isDark) return AuthColors.darkMode;
     if (buttonType == AuthButtonType.secondary) {
       return color.onSecondaryButton ?? color.main;

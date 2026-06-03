@@ -21,12 +21,12 @@ class ForegroundColor {
 
 Color resolvedForegroundColor({
   required ForegroundColor foregroundColor,
-  required Set<MaterialState> states,
+  required Set<WidgetState> states,
   required bool isDark,
   required AuthButtonType? buttonType,
   required AuthIconType? iconType,
 }) {
-  if (!states.contains(MaterialState.disabled)) {
+  if (!states.contains(WidgetState.disabled)) {
     if (isDark) return Colors.grey.shade400;
     if (buttonType == AuthButtonType.secondary) {
       return foregroundColor.onSecondaryButton ?? foregroundColor.main;

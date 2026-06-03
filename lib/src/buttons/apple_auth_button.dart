@@ -69,7 +69,7 @@ class AppleAuthButton extends AuthButton {
   }
 
   @override
-  Color? resolveBackgroundColor(Set<MaterialState> states) {
+  Color? resolveBackgroundColor(Set<WidgetState> states) {
     return resolvedBackgroundColor(
       color: const ButtonColor(
         Colors.white,
@@ -83,7 +83,7 @@ class AppleAuthButton extends AuthButton {
   }
 
   @override
-  Color? resolveForegroundColor(Set<MaterialState> states) {
+  Color? resolveForegroundColor(Set<WidgetState> states) {
     return resolvedForegroundColor(
       foregroundColor: const ForegroundColor(
         Colors.black,
@@ -97,9 +97,9 @@ class AppleAuthButton extends AuthButton {
   }
 
   @override
-  TextStyle? resolveTextStyle(Set<MaterialState> states) {
+  TextStyle? resolveTextStyle(Set<WidgetState> states) {
     return GoogleFonts.getFont(
-      'Source Sans Pro',
+      'Source Sans 3',
       fontWeight: FontWeight.w600,
       fontSize: 18,
     );

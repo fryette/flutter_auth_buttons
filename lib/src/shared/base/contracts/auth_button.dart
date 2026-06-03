@@ -31,92 +31,92 @@ abstract class AuthButton extends AuthButtonStyleButton {
   @override
   ButtonStyle? getMaterialStyle(BuildContext context) {
     return ButtonStyle(
-      textStyle: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) =>
+      textStyle: WidgetStateProperty.resolveWith(
+        (Set<WidgetState> states) =>
             materialStyle?.textStyle?.resolve(states) ??
             _inheritedMaterialStyle(context)?.textStyle?.resolve(states) ??
             resolveTextStyle(states),
       ),
-      backgroundColor: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) =>
+      backgroundColor: WidgetStateProperty.resolveWith(
+        (Set<WidgetState> states) =>
             materialStyle?.backgroundColor?.resolve(states) ??
             _inheritedMaterialStyle(context)
                 ?.backgroundColor
                 ?.resolve(states) ??
             resolveBackgroundColor(states),
       ),
-      foregroundColor: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) =>
+      foregroundColor: WidgetStateProperty.resolveWith(
+        (Set<WidgetState> states) =>
             materialStyle?.foregroundColor?.resolve(states) ??
             _inheritedMaterialStyle(context)
                 ?.foregroundColor
                 ?.resolve(states) ??
             resolveForegroundColor(states),
       ),
-      overlayColor: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) =>
+      overlayColor: WidgetStateProperty.resolveWith(
+        (Set<WidgetState> states) =>
             materialStyle?.overlayColor?.resolve(states) ??
             _inheritedMaterialStyle(context)?.overlayColor?.resolve(states) ??
             resolveOverlayColor(states),
       ),
-      shadowColor: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) =>
+      shadowColor: WidgetStateProperty.resolveWith(
+        (Set<WidgetState> states) =>
             materialStyle?.shadowColor?.resolve(states) ??
             _inheritedMaterialStyle(context)?.shadowColor?.resolve(states) ??
             resolveShadowColor(states),
       ),
-      surfaceTintColor: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) =>
+      surfaceTintColor: WidgetStateProperty.resolveWith(
+        (Set<WidgetState> states) =>
             materialStyle?.surfaceTintColor?.resolve(states) ??
             _inheritedMaterialStyle(context)
                 ?.surfaceTintColor
                 ?.resolve(states) ??
             resolveSurfaceTintColor(states),
       ),
-      elevation: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) =>
+      elevation: WidgetStateProperty.resolveWith(
+        (Set<WidgetState> states) =>
             materialStyle?.elevation?.resolve(states) ??
             _inheritedMaterialStyle(context)?.elevation?.resolve(states) ??
             resolveElevation(states),
       ),
-      padding: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) =>
+      padding: WidgetStateProperty.resolveWith(
+        (Set<WidgetState> states) =>
             materialStyle?.padding?.resolve(states) ??
             _inheritedMaterialStyle(context)?.padding?.resolve(states) ??
             resolvePadding(states),
       ),
-      minimumSize: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) =>
+      minimumSize: WidgetStateProperty.resolveWith(
+        (Set<WidgetState> states) =>
             materialStyle?.minimumSize?.resolve(states) ??
             _inheritedMaterialStyle(context)?.minimumSize?.resolve(states) ??
             resolveMinimumSize(states),
       ),
-      fixedSize: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) =>
+      fixedSize: WidgetStateProperty.resolveWith(
+        (Set<WidgetState> states) =>
             materialStyle?.fixedSize?.resolve(states) ??
             _inheritedMaterialStyle(context)?.fixedSize?.resolve(states) ??
             resolveFixedSize(states),
       ),
-      maximumSize: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) =>
+      maximumSize: WidgetStateProperty.resolveWith(
+        (Set<WidgetState> states) =>
             materialStyle?.maximumSize?.resolve(states) ??
             _inheritedMaterialStyle(context)?.maximumSize?.resolve(states) ??
             resolveMaximumSize(states),
       ),
-      side: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) =>
+      side: WidgetStateProperty.resolveWith(
+        (Set<WidgetState> states) =>
             materialStyle?.side?.resolve(states) ??
             _inheritedMaterialStyle(context)?.side?.resolve(states) ??
             resolveSide(states),
       ),
-      shape: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) =>
+      shape: WidgetStateProperty.resolveWith(
+        (Set<WidgetState> states) =>
             materialStyle?.shape?.resolve(states) ??
             _inheritedMaterialStyle(context)?.shape?.resolve(states) ??
             resolveShape(states),
       ),
-      mouseCursor: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) =>
+      mouseCursor: WidgetStateProperty.resolveWith(
+        (Set<WidgetState> states) =>
             materialStyle?.mouseCursor?.resolve(states) ??
             _inheritedMaterialStyle(context)?.mouseCursor?.resolve(states) ??
             resolveMouseCursor(states),
@@ -187,7 +187,7 @@ abstract class AuthButton extends AuthButtonStyleButton {
         padding: EdgeInsets.zero,
         borderRadius: 8.0,
         progressIndicatorValueColor: getProgressIndicatorColor(),
-        progressIndicatorColor: getProgressIndicatorColor()?.withOpacity(.3),
+        progressIndicatorColor: getProgressIndicatorColor()?.withValues(alpha: .3),
       ).merge(_getInheritedStyle(context)),
     );
   }
@@ -199,7 +199,7 @@ abstract class AuthButton extends AuthButtonStyleButton {
         padding: const EdgeInsets.only(right: 16.0),
         iconBackground: enabled
             ? isDark
-                ? Colors.grey.withOpacity(.2)
+                ? Colors.grey.withValues(alpha: .2)
                 : Colors.white
             : Colors.black12,
         progressIndicatorValueColor: getProgressIndicatorColor(),
@@ -213,7 +213,7 @@ abstract class AuthButton extends AuthButtonStyleButton {
       AuthButtonStyle(
         borderRadius: 8.0,
         progressIndicatorValueColor: getProgressIndicatorColor(),
-        progressIndicatorColor: getProgressIndicatorColor()?.withOpacity(.3),
+        progressIndicatorColor: getProgressIndicatorColor()?.withValues(alpha: .3),
       ).merge(_getInheritedStyle(context)),
     );
   }

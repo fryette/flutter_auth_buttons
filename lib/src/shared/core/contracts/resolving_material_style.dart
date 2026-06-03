@@ -4,7 +4,7 @@ import 'package:flutter/material.dart'
         Color,
         EdgeInsets,
         FontWeight,
-        MaterialState,
+        WidgetState,
         MouseCursor,
         OutlinedBorder,
         Size,
@@ -17,7 +17,7 @@ import 'package:google_fonts/google_fonts.dart';
 ///
 /// This is mixed in [AuthButtonStyleButton], its methods are implemented in the concrete [AuthButton]s.
 mixin ResolvingMaterialStyle {
-  TextStyle? resolveTextStyle(Set<MaterialState> states) {
+  TextStyle? resolveTextStyle(Set<WidgetState> states) {
     return GoogleFonts.getFont(
       'Roboto',
       fontSize: 18,
@@ -26,55 +26,55 @@ mixin ResolvingMaterialStyle {
     );
   }
 
-  Color? resolveBackgroundColor(Set<MaterialState> states) {
+  Color? resolveBackgroundColor(Set<WidgetState> states) {
     return null;
   }
 
-  Color? resolveForegroundColor(Set<MaterialState> states) {
+  Color? resolveForegroundColor(Set<WidgetState> states) {
     return null;
   }
 
-  Color? resolveOverlayColor(Set<MaterialState> states) {
+  Color? resolveOverlayColor(Set<WidgetState> states) {
     return null;
   }
 
-  Color? resolveShadowColor(Set<MaterialState> states) {
+  Color? resolveShadowColor(Set<WidgetState> states) {
     return null;
   }
 
-  Color? resolveSurfaceTintColor(Set<MaterialState> states) {
+  Color? resolveSurfaceTintColor(Set<WidgetState> states) {
     return null;
   }
 
-  double? resolveElevation(Set<MaterialState> states) {
+  double? resolveElevation(Set<WidgetState> states) {
     return null;
   }
 
-  EdgeInsets? resolvePadding(Set<MaterialState> states) {
+  EdgeInsets? resolvePadding(Set<WidgetState> states) {
     return null;
   }
 
-  Size? resolveMinimumSize(Set<MaterialState> states) {
+  Size? resolveMinimumSize(Set<WidgetState> states) {
     return const Size(double.minPositive, double.minPositive);
   }
 
-  Size? resolveFixedSize(Set<MaterialState> states) {
+  Size? resolveFixedSize(Set<WidgetState> states) {
     return null;
   }
 
-  Size? resolveMaximumSize(Set<MaterialState> states) {
+  Size? resolveMaximumSize(Set<WidgetState> states) {
     return null;
   }
 
-  BorderSide? resolveSide(Set<MaterialState> states) {
+  BorderSide? resolveSide(Set<WidgetState> states) {
     return null;
   }
 
-  OutlinedBorder? resolveShape(Set<MaterialState> states) {
+  OutlinedBorder? resolveShape(Set<WidgetState> states) {
     return null;
   }
 
-  MouseCursor? resolveMouseCursor(Set<MaterialState> states) {
+  MouseCursor? resolveMouseCursor(Set<WidgetState> states) {
     return null;
   }
 }

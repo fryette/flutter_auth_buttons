@@ -109,7 +109,7 @@ class AuthButtonGroup extends StatelessWidget {
     properties.add(EnumProperty<WrapAlignment>('alignment', alignment));
     properties.add(EnumProperty<WrapAlignment>('runAlignment', runAlignment));
     properties.add(EnumProperty<WrapCrossAlignment>(
-        'crossAxisAlignment', crossAxisAlignment));
+        'crossAxisAlignment', crossAxisAlignment,),);
     properties.add(EnumProperty<VerticalDirection>('direction', direction));
     // @formatter:on
   }

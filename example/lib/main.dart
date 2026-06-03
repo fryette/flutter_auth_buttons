@@ -10,7 +10,7 @@ void main() {
 }
 
 class _MyApp extends StatefulWidget {
-  const _MyApp({Key? key}) : super(key: key);
+  const _MyApp();
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -174,43 +174,23 @@ class _MyAppState extends State<_MyApp> {
               fontSize: 24,
             ),
           ),
-          Row(
-            children: [
-              Row(
-                children: [
-                  const Text('default'),
-                  Radio<AuthButtonType?>(
-                    value: null,
-                    groupValue: buttonType,
-                    onChanged: (AuthButtonType? value) {
-                      setState(() {
-                        buttonType = value;
-                      });
-                    },
-                  ),
-                  const Text('secondary'),
-                  Radio<AuthButtonType>(
-                    value: AuthButtonType.secondary,
-                    groupValue: buttonType,
-                    onChanged: (AuthButtonType? value) {
-                      setState(() {
-                        buttonType = value;
-                      });
-                    },
-                  ),
-                  const Text('icon'),
-                  Radio<AuthButtonType>(
-                    value: AuthButtonType.icon,
-                    groupValue: buttonType,
-                    onChanged: (AuthButtonType? value) {
-                      setState(() {
-                        buttonType = value;
-                      });
-                    },
-                  ),
-                ],
-              ),
-            ],
+          RadioGroup<AuthButtonType?>(
+            groupValue: buttonType,
+            onChanged: (AuthButtonType? value) {
+              setState(() {
+                buttonType = value;
+              });
+            },
+            child: Row(
+              children: [
+                const Text('default'),
+                Radio<AuthButtonType?>(value: null),
+                const Text('secondary'),
+                Radio<AuthButtonType?>(value: AuthButtonType.secondary),
+                const Text('icon'),
+                Radio<AuthButtonType?>(value: AuthButtonType.icon),
+              ],
+            ),
           ),
         ],
       ),
@@ -229,43 +209,23 @@ class _MyAppState extends State<_MyApp> {
               fontSize: 24,
             ),
           ),
-          Row(
-            children: [
-              Row(
-                children: [
-                  const Text('default'),
-                  Radio<AuthIconType?>(
-                    value: null,
-                    groupValue: iconType,
-                    onChanged: (AuthIconType? value) {
-                      setState(() {
-                        iconType = value;
-                      });
-                    },
-                  ),
-                  const Text('outlined'),
-                  Radio<AuthIconType?>(
-                    value: AuthIconType.outlined,
-                    groupValue: iconType,
-                    onChanged: (AuthIconType? value) {
-                      setState(() {
-                        iconType = value;
-                      });
-                    },
-                  ),
-                  const Text('secondary'),
-                  Radio<AuthIconType?>(
-                    value: AuthIconType.secondary,
-                    groupValue: iconType,
-                    onChanged: (AuthIconType? value) {
-                      setState(() {
-                        iconType = value;
-                      });
-                    },
-                  ),
-                ],
-              ),
-            ],
+          RadioGroup<AuthIconType?>(
+            groupValue: iconType,
+            onChanged: (AuthIconType? value) {
+              setState(() {
+                iconType = value;
+              });
+            },
+            child: Row(
+              children: [
+                const Text('default'),
+                Radio<AuthIconType?>(value: null),
+                const Text('outlined'),
+                Radio<AuthIconType?>(value: AuthIconType.outlined),
+                const Text('secondary'),
+                Radio<AuthIconType?>(value: AuthIconType.secondary),
+              ],
+            ),
           ),
         ],
       ),
